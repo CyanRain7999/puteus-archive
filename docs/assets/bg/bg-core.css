@@ -1,6 +1,4 @@
-/* Puteus Dynamic BG Core
-   Ensures background layers stay behind page content.
-*/
+/* Puteus Dynamic BG Core (required) */
 #puteus-bg-root{
   position:fixed;
   inset:0;

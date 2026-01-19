@@ -1,28 +1,6 @@
 (function(){
   const base = (window.__SITE_BASE__ || "/");
-  const params = new URLSearchParams(location.search);
-  const bgParam = params.get("bg");
-  if (bgParam) {
-    try { localStorage.setItem("puteus_bg", bgParam); } catch(e) {}
-  }
-  let chosen = bgParam;
-  if (!chosen) {
-    try { chosen = localStorage.getItem("puteus_bg"); } catch(e) {}
-  }
-  if (!chosen) chosen = "ripples"; // default
-  chosen = String(chosen).toLowerCase();
 
-  if (chosen === "off" || chosen === "none" || chosen === "0") return;
-
-  const map = {
-    ripples: { css: "assets/bg/ripples.css", js: "assets/bg/ripples.js" },
-    scan:    { css: "assets/bg/scan.css",    js: "assets/bg/scan.js"    },
-    neural:  { css: "assets/bg/neural.css",  js: "assets/bg/neural.js"  },
-  };
-
-  const pick = map[chosen] || map.ripples;
-
-  // Create root container if not exist
   if (!document.getElementById("puteus-bg-root")) {
     const root = document.createElement("div");
     root.id = "puteus-bg-root";
@@ -49,10 +27,8 @@
     document.head.appendChild(s);
   }
 
+  // Single background only: Hybrid (ripples + neural)
   addCss("assets/bg/bg-core.css");
-  addCss(pick.css);
-  addJs(pick.js);
-
-  // Quick hint (console only)
-  // Use ?bg=ripples | ?bg=scan | ?bg=neural | ?bg=off
+  addCss("assets/bg/hybrid.css");
+  addJs("assets/bg/hybrid.js");
 })();
