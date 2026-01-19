@@ -1,0 +1,21 @@
+/* Puteus Dynamic BG Core
+   Ensures background layers stay behind page content.
+*/
+#puteus-bg-root{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+#puteus-bg-root canvas,
+#puteus-bg-root .puteus-bg-fill{
+  width:100%;
+  height:100%;
+  display:block;
+}
+/* Lift content above bg */
+.topnav, main, .footer{
+  position:relative;
+  z-index:2;
+}
