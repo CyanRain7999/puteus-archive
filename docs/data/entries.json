@@ -1,0 +1,19 @@
+[
+  {
+    "id": "H-001",
+    "title": "黑曜几何体",
+    "ordo": "Harmonicus / 调和级",
+    "ordo_key": "harmonicus",
+    "summary": "外观为类黑曜石几何体，无温度；读数稳定；仅做占位示例。",
+    "puteus": "Puteus-4",
+    "mersor": "Mersor-09",
+    "status": "Observation",
+    "tags": [
+      "imago",
+      "obsidian",
+      "geometry"
+    ],
+    "date": "2026-01-19",
+    "url": "entries/harmonicus/H-001.html"
+  }
+]
